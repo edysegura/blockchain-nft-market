@@ -7,7 +7,7 @@ class Home extends Nullstack {
     page.description = `${project.name} was made with Nullstack`;
   }
 
-  render({ project }) {
+  render() {
     return (
       <section>
        <h1>Onboard NFT #1</h1>
