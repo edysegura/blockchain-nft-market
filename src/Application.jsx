@@ -1,6 +1,6 @@
 import Nullstack from 'nullstack';
-import './Application.css';
 import Home from './Home';
+import './styles.css';
 
 class Application extends Nullstack {
 
