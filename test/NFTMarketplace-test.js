@@ -1,5 +1,5 @@
 describe("NFTMarketplace", () => {
-  it("should create and execute NFT marketplace sales", async function () {
+  it("should create and execute NFT marketplace sales", async () => {
     /* deploy the marketplace */
     const NFTMarketplace = await ethers.getContractFactory("NFTMarketplace");
     const nftMarketplace = await NFTMarketplace.deploy();

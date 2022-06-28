@@ -15,6 +15,7 @@
     "start-tailwind": "npx tailwindcss -i ./src/tailwind.css -o ./src/styles.css --watch",
     "build-tailwind": "npx tailwindcss -i ./src/tailwind.css -o ./src/styles.css",
     "start": "concurrently \"npm run start-tailwind\" \"npm run start-nullstack\"",
+    "test": "npx hardhat test",
     "reinstall": "rm -rf node_modules package-lock.json yarn.lock .development .production && npm install"
   },
   "dependencies": {
