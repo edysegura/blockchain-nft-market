@@ -1,5 +1,6 @@
 import Nullstack from 'nullstack';
 import Home from './Home';
+import Nav from './Nav';
 import './styles.css';
 
 class Application extends Nullstack {
@@ -24,7 +25,9 @@ class Application extends Nullstack {
     return (
       <main>
         <Head />
-        <Home route="/" />
+        <Nav>
+          <Home route="/" />
+        </Nav>
       </main>
     )
   }
