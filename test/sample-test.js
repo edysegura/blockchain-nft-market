@@ -1,5 +1,5 @@
-describe("NFTMarket", function () {
-  it("Should create and execute market sales", async function () {
+describe("NFTMarketplace", () => {
+  it("should create and execute NFT marketplace sales", async function () {
     /* deploy the marketplace */
     const NFTMarketplace = await ethers.getContractFactory("NFTMarketplace");
     const nftMarketplace = await NFTMarketplace.deploy();
@@ -35,18 +35,18 @@ describe("NFTMarket", function () {
       .resellToken(1, auctionPrice, { value: listingPrice });
 
     /* query for and return the unsold items */
-    items = await nftMarketplace.fetchMarketItems();
-    items = await Promise.all(
-      items.map(async (i) => {
-        const tokenUri = await nftMarketplace.tokenURI(i.tokenId);
+    const marketItems = await nftMarketplace.fetchMarketItems();
+    const items = await Promise.all(
+      marketItems.map(async (marketItem) => {
+        const tokenUri = await nftMarketplace.tokenURI(marketItem.tokenId);
         let item = {
-          price: i.price.toString(),
-          tokenId: i.tokenId.toString(),
-          seller: i.seller,
-          owner: i.owner,
+          price: marketItem.price.toString(),
+          tokenId: marketItem.tokenId.toString(),
+          seller: marketItem.seller,
+          owner: marketItem.owner,
           tokenUri,
         };
-        return item;
+        return marketItem;
       })
     );
     console.log("items: ", items);
