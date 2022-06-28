@@ -10,7 +10,7 @@ class Home extends Nullstack {
   render() {
     return (
       <section>
-       <h1>Onboard NFT #1</h1>
+       <h1 class="text-purple-500">Onboard NFT #1</h1>
       </section>
     )
   }
