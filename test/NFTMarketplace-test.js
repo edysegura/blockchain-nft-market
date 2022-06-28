@@ -46,7 +46,7 @@ describe("NFTMarketplace", () => {
           owner: marketItem.owner,
           tokenUri,
         };
-        return marketItem;
+        return item;
       })
     );
     console.log("items: ", items);
