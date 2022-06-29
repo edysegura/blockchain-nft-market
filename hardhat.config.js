@@ -1,5 +1,5 @@
 require('dotenv').config()
-require("@nomiclabs/hardhat-waffle")
+require('@nomiclabs/hardhat-waffle')
 
 const privateKey = process.env.WALLET_PRIVATE_KEY
 const projectId = process.env.INFURA_PROJECT_ID
@@ -10,16 +10,16 @@ const projectId = process.env.INFURA_PROJECT_ID
 module.exports = {
   networks: {
     hardhat: {
-      chainId: 1337
+      chainId: 1337,
     },
     mumbai: {
       url: `https://polygon-mumbai.infura.io/v3/${projectId}`,
-      accounts: [privateKey]
+      accounts: [privateKey],
     },
     matic: {
       url: `https://polygon-mainnet.infura.io/v3/${projectId}`,
-      accounts: [privateKey]
-    }
+      accounts: [privateKey],
+    },
   },
-  solidity: "0.8.4",
-};
+  solidity: '0.8.4',
+}
