@@ -1,16 +1,15 @@
-node_modules/
 .development/
+.env
 .production/
-package-lock.json
-yarn.lock
-.env
-src/styles.css
-node_modules
-.env
 coverage
 coverage.json
+node_modules/
+package-lock.json
+src/styles.css
 typechain
+yarn.lock
 
 #Hardhat files
 cache
 artifacts
+config.js
