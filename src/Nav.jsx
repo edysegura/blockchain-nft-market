@@ -10,13 +10,13 @@ class Nav extends Nullstack {
             <a class="mr-6" href="/">
               Home
             </a>
-            <a class="mr-6" href="/create-item">
+            <a class="mr-6" href="/create-nft">
               Sell Digital Asset
             </a>
-            <a class="mr-6" href="/my-assets">
+            <a class="mr-6" href="/my-nfts">
               My Digital Assets
             </a>
-            <a class="mr-6" href="/creator-dashboard">
+            <a class="mr-6" href="/dashboard">
               Creator Dashboard
             </a>
           </div>
