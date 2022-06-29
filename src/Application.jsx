@@ -1,4 +1,5 @@
 import Nullstack from 'nullstack'
+import CreateNFT from './CreateNFT'
 import Home from './Home'
 import Nav from './Nav'
 import './styles.css'
@@ -26,6 +27,7 @@ class Application extends Nullstack {
         <Head />
         <Nav>
           <Home route="/" />
+          <CreateNFT route="/create-nft" />
         </Nav>
       </main>
     )
