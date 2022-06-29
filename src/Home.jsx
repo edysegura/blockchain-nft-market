@@ -6,6 +6,7 @@ import NFTMarketplace from '../artifacts/contracts/NFTMarketplace.sol/NFTMarketp
 class Home extends Nullstack {
   _Web3Modal = null
   nftItems = []
+  loading = true
 
   prepare({ project, page }) {
     page.title = `${project.name}`
@@ -19,7 +20,6 @@ class Home extends Nullstack {
 
   async loadWeb3Modal() {
     const Web3Modal = await import('web3modal')
-    console.log(Web3Modal)
     return Web3Modal
   }
 
@@ -30,6 +30,7 @@ class Home extends Nullstack {
   }
 
   async loadNFTs() {
+    this.loading = true
     /* create a generic provider and query for unsold market items */
     const provider = new ethers.providers.JsonRpcProvider()
     const contract = new ethers.Contract(
@@ -62,13 +63,57 @@ class Home extends Nullstack {
         return item
       }),
     )
+    this.loading = false
     return items
   }
 
+  async buyNFT({ nft }) {
+    const web3Modal = new this._Web3Modal()
+    const connection = await web3Modal.connect()
+    const provider = new ethers.providers.Web3Provider(connection)
+    const signer = provider.getSigner()
+    const contract = new ethers.Contract(
+      marketplaceAddress,
+      NFTMarketplace.abi,
+      signer,
+    )
+    const price = ethers.utils.parseUnits(nft.price.toString(), 'ether')
+    const transaction = await contract.createMarketSale(nft.tokenId, {
+      value: price,
+    })
+    await transaction.wait()
+    this.loadNFTs()
+  }
+
   render() {
+    if (this.loading === false && !this.nftItems.length)
+      return <h1 class="px-20 py-10 text-3xl">No items in marketplace</h1>
     return (
-      <section>
-        <h1 class="text-purple-500">Onboard NFT #1</h1>
+      <section class="flex justify-center">
+        <div class="px-4 max-w-[1600px]">
+          <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 pt-4">
+            {this.nftItems.map((nft) => (
+              <div class="border shadow rounded-xl overflow-hidden">
+                <img src={nft.image} />
+                <div class="p-4">
+                  <p class="text-2xl h-[64px] font-semibold">{nft.name}</p>
+                  <div class="h-[70px] overflow-hidden">
+                    <p class="text-gray-400">{nft.description}</p>
+                  </div>
+                </div>
+                <div class="p-4 bg-black">
+                  <p class="text-2xl font-bold text-white">{nft.price} ETH</p>
+                  <button
+                    class="mt-4 w-full bg-pink-500 text-white font-bold py-2 px-12 rounded"
+                    onclick={() => this.buyNft(nft)}
+                  >
+                    Buy
+                  </button>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
       </section>
     )
   }
