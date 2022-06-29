@@ -14,6 +14,9 @@
     "build-nullstack": "npx nullstack build --mode=ssr",
     "start-tailwind": "npx tailwindcss -i ./src/tailwind.css -o ./src/styles.css --watch",
     "build-tailwind": "npx tailwindcss -i ./src/tailwind.css -o ./src/styles.css",
+    "hre:local-deploy": "npx hardhat run scripts/deploy.js --network localhost",
+    "hre:local-node": "npx hardhat node",
+    "hre:start": "concurrently \"npm run hre:local-node\" \"npm run hre:local-deploy\"",
     "start": "concurrently \"npm run start-tailwind\" \"npm run start-nullstack\"",
     "test": "npx hardhat test",
     "reinstall": "rm -rf node_modules package-lock.json yarn.lock .development .production && npm install"
