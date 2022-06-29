@@ -5,7 +5,9 @@ import Nav from './Nav'
 import './styles.css'
 
 class Application extends Nullstack {
-  prepare({ page }) {
+  prepare({ page, project }) {
+    page.title = `${project.name}`
+    page.description = `${project.name} was made with Nullstack`
     page.locale = 'en-US'
   }
 

@@ -8,11 +8,6 @@ class Home extends Nullstack {
   nftItems = []
   loading = true
 
-  prepare({ project, page }) {
-    page.title = `${project.name}`
-    page.description = `${project.name} was made with Nullstack`
-  }
-
   async hydrate() {
     this.nftItems = await this.loadNFTs()
     this._Web3Modal = await this.loadWeb3Modal()
