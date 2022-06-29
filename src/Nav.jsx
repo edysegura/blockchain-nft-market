@@ -10,6 +10,8 @@ class Nav extends Nullstack {
         <div class="flex mt-4 text-pink-500">
           <a class="mr-6" href="/">Home</a>
           <a class="mr-6" href="/create-item">Sell Digital Asset</a>
+          <a class="mr-6" href="/my-assets">My Digital Assets</a>
+          <a class="mr-6" href="/creator-dashboard">Creator Dashboard</a>
         </div>
        </nav>
         <main>
