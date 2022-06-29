@@ -16,7 +16,7 @@ module.exports = {
       url: `https://polygon-mumbai.infura.io/v3/${projectId}`,
       accounts: [privateKey]
     },
-    mumbai: {
+    matic: {
       url: `https://polygon-mainnet.infura.io/v3/${projectId}`,
       accounts: [privateKey]
     }
