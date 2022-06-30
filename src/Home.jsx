@@ -10,7 +10,12 @@ class Home extends Nullstack {
     this.loading = false
   }
 
-  async loadNFTs({ _ethers: ethers, marketplaceAddress, fetchJson, NFTMarketplace }) {
+  async loadNFTs({
+    _ethers: ethers,
+    marketplaceAddress,
+    fetchJson,
+    NFTMarketplace,
+  }) {
     const provider = new ethers.providers.JsonRpcProvider()
     const contract = new ethers.Contract(
       marketplaceAddress,
@@ -45,7 +50,13 @@ class Home extends Nullstack {
     return items
   }
 
-  async buyNFT({ _ethers: ethers, marketplaceAddress, NFTMarketplace, Web3Modal, nft }) {
+  async buyNFT({
+    _ethers: ethers,
+    marketplaceAddress,
+    NFTMarketplace,
+    Web3Modal,
+    nft,
+  }) {
     const web3Modal = new Web3Modal()
     const connection = await web3Modal.connect()
     const provider = new ethers.providers.Web3Provider(connection)
