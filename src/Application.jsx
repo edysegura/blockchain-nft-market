@@ -1,6 +1,7 @@
 import Nullstack from 'nullstack'
 import CreateNFT from './CreateNFT'
 import Home from './Home'
+import MyNFTs from './MyNFTs'
 import Nav from './Nav'
 import './styles.css'
 
@@ -30,6 +31,7 @@ class Application extends Nullstack {
         <Nav>
           <Home route="/" />
           <CreateNFT route="/create-nft" />
+          <MyNFTs route="/my-nfts" />
         </Nav>
       </main>
     )
