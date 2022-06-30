@@ -6,7 +6,7 @@ class MyNFTs extends Nullstack {
 
   async hydrate() {
     this.loading = true
-    await this.loadNFTs()
+    this.nfts = await this.loadNFTs()
     this.loading = false
   }
 
@@ -16,30 +16,41 @@ class MyNFTs extends Nullstack {
     return data
   }
 
-  async loadNFTs({ _ethers: ethers, marketplaceAddress, NFTMarketplace, Web3Modal }) {
+  async loadNFTs({
+    _ethers: ethers,
+    marketplaceAddress,
+    NFTMarketplace,
+    Web3Modal,
+  }) {
     const web3Modal = new Web3Modal()
     const connection = await web3Modal.connect()
     const provider = new ethers.providers.Web3Provider(connection)
     const signer = provider.getSigner()
 
-    const marketplaceContract = new ethers.Contract(marketplaceAddress, NFTMarketplace.abi, signer)
+    const marketplaceContract = new ethers.Contract(
+      marketplaceAddress,
+      NFTMarketplace.abi,
+      signer,
+    )
     const rawNFTs = await marketplaceContract.fetchMyNFTs()
 
-    const nfts = await Promise.all(rawNFTs.map(async nft => {
-      const tokenUri = await marketplaceContract.tokenURI(nft.tokenId)
-      const meta = await this.fetchData({ uri: tokenUri })
-      const price = ethers.utils.formatUnits(nft.price.toString(), 'ether')
-      const item = {
-        price,
-        tokenId: nft.tokenId.toNumber(),
-        seller: nft.seller,
-        owner: nft.owner,
-        image: meta.image,
-        tokenUri
-      }
-      return item
-    }))
-    this.nfts = nfts
+    const nfts = await Promise.all(
+      rawNFTs.map(async (nft) => {
+        const tokenUri = await marketplaceContract.tokenURI(nft.tokenId)
+        const meta = await this.fetchData({ uri: tokenUri })
+        const price = ethers.utils.formatUnits(nft.price.toString(), 'ether')
+        const item = {
+          price,
+          tokenId: nft.tokenId.toNumber(),
+          seller: nft.seller,
+          owner: nft.owner,
+          image: meta.image,
+          tokenUri,
+        }
+        return item
+      }),
+    )
+    return nfts
   }
 
   render() {
@@ -58,7 +69,7 @@ class MyNFTs extends Nullstack {
                   </p>
                   <button
                     class="mt-4 w-full bg-pink-500 text-white font-bold py-2 px-12 rounded"
-                    onClick={() => listNFT(nft)}
+                    onclick={() => console.log({ nft })}
                   >
                     List
                   </button>

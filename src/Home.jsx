@@ -5,7 +5,9 @@ class Home extends Nullstack {
   loading = true
 
   async hydrate() {
+    this.loading = true
     this.nftItems = await this.loadNFTs()
+    this.loading = false
   }
 
   async fetchData({ uri }) {
@@ -15,7 +17,6 @@ class Home extends Nullstack {
   }
 
   async loadNFTs({ _ethers: ethers, marketplaceAddress, NFTMarketplace }) {
-    this.loading = true
     const provider = new ethers.providers.JsonRpcProvider()
     const contract = new ethers.Contract(
       marketplaceAddress,
@@ -47,7 +48,6 @@ class Home extends Nullstack {
         return item
       }),
     )
-    this.loading = false
     return items
   }
 
