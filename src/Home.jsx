@@ -81,7 +81,7 @@ class Home extends Nullstack {
           <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 pt-4">
             {this.nftItems.map((nft) => (
               <div class="border shadow rounded-xl overflow-hidden">
-                <img class="w-full" src={nft.image} alt={nft.name} />
+                <img class="w-full h-[150px]" src={nft.image} alt={nft.name} />
                 <div class="p-4">
                   <p class="text-2xl h-[64px] font-semibold">{nft.name}</p>
                   <div class="h-[70px] overflow-hidden">
