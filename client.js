@@ -7,7 +7,7 @@ const context = Nullstack.start(Application)
 
 context.start = async function start() {
   const { settings } = context
-  context.ipfsHttpClient = ipfsHttpClient(settings.ipfsClient)
+  context.ipfsClient = ipfsHttpClient(settings.ipfsClient)
   context.Web3Modal = Web3Modal
 }
 
