@@ -1,7 +1,4 @@
 import Nullstack from 'nullstack'
-import { ethers } from 'ethers'
-import { marketplaceAddress } from '../config'
-import NFTMarketplace from '../artifacts/contracts/NFTMarketplace.sol/NFTMarketplace.json'
 
 class Home extends Nullstack {
   nftItems = []
@@ -17,7 +14,7 @@ class Home extends Nullstack {
     return data
   }
 
-  async loadNFTs() {
+  async loadNFTs({ _ethers: ethers, marketplaceAddress, NFTMarketplace }) {
     this.loading = true
     const provider = new ethers.providers.JsonRpcProvider()
     const contract = new ethers.Contract(
@@ -54,7 +51,7 @@ class Home extends Nullstack {
     return items
   }
 
-  async buyNFT({ Web3Modal, nft }) {
+  async buyNFT({ _ethers: ethers, marketplaceAddress, NFTMarketplace, Web3Modal, nft }) {
     const web3Modal = new Web3Modal()
     const connection = await web3Modal.connect()
     const provider = new ethers.providers.Web3Provider(connection)
