@@ -10,15 +10,10 @@ class MyNFTs extends Nullstack {
     this.loading = false
   }
 
-  async fetchData({ uri }) {
-    const response = await fetch(uri)
-    const data = await response.json()
-    return data
-  }
-
   async loadNFTs({
     _ethers: ethers,
     marketplaceAddress,
+    fetchJson,
     NFTMarketplace,
     Web3Modal,
   }) {
@@ -37,7 +32,7 @@ class MyNFTs extends Nullstack {
     const nfts = await Promise.all(
       rawNFTs.map(async (nft) => {
         const tokenUri = await marketplaceContract.tokenURI(nft.tokenId)
-        const meta = await this.fetchData({ uri: tokenUri })
+        const meta = await fetchJson({ uri: tokenUri })
         const price = ethers.utils.formatUnits(nft.price.toString(), 'ether')
         const item = {
           price,

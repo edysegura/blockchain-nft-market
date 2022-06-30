@@ -10,13 +10,7 @@ class Home extends Nullstack {
     this.loading = false
   }
 
-  async fetchData({ uri }) {
-    const response = await fetch(uri)
-    const data = await response.json()
-    return data
-  }
-
-  async loadNFTs({ _ethers: ethers, marketplaceAddress, NFTMarketplace }) {
+  async loadNFTs({ _ethers: ethers, marketplaceAddress, fetchJson, NFTMarketplace }) {
     const provider = new ethers.providers.JsonRpcProvider()
     const contract = new ethers.Contract(
       marketplaceAddress,
@@ -31,7 +25,7 @@ class Home extends Nullstack {
     const items = await Promise.all(
       marketItems.map(async (marketItem) => {
         const tokenUri = await contract.tokenURI(marketItem.tokenId)
-        const meta = await this.fetchData({ uri: tokenUri })
+        const meta = await fetchJson({ uri: tokenUri })
         const price = ethers.utils.formatUnits(
           marketItem.price.toString(),
           'ether',
