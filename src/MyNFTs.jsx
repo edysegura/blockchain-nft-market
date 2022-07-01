@@ -57,7 +57,7 @@ class MyNFTs extends Nullstack {
           <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 pt-4">
             {this.nfts.map((nft) => (
               <div class="border shadow rounded-xl overflow-hidden">
-                <img src={nft.image} class="rounded" />
+                <img src={nft.image} class="rounded w-full h-[150px]" alt="" />
                 <div class="p-4 bg-black">
                   <p class="text-2xl font-bold text-white">
                     Price - {nft.price} ETH

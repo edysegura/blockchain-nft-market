@@ -71,7 +71,7 @@ class Home extends Nullstack {
       value: price,
     })
     await transaction.wait()
-    this.loadNFTs()
+    this.hydrate()
   }
 
   render() {
