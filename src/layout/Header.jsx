@@ -1,7 +1,7 @@
 import Nullstack from 'nullstack'
-import { AccountIcon } from './icons/account'
+import { AccountIcon } from '../icons/account'
 
-class Nav extends Nullstack {
+class Header extends Nullstack {
   renderMyAccount() {
     return (
       <a href='#' class="flex justify-end items-center pt-3">
@@ -10,7 +10,7 @@ class Nav extends Nullstack {
     )
   }
 
-  render({ children }) {
+  render() {
     return (
       <div>
         <MyAccount />
@@ -37,10 +37,9 @@ class Nav extends Nullstack {
             </div>
           </nav>
         </div>
-        <main>{children}</main>
       </div>
     )
   }
 }
 
-export default Nav
+export default Header

@@ -67,7 +67,7 @@ class MyNFTs extends Nullstack {
                     Price - {nft.price} ETH
                   </p>
                   <button
-                    class="mt-4 w-full bg-pink-500 text-white font-bold py-2 px-12 rounded"
+                    class="mt-4 w-full bg-mustard text-black font-bold py-2 px-12 rounded"
                     onclick={() => this.listNFT({ nft })}
                   >
                     List

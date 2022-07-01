@@ -97,7 +97,7 @@ class CreateNFT extends Nullstack {
           )}
           <button
             onclick={this.listNFTForSale}
-            class="font-bold mt-4 bg-pink-500 text-white rounded p-4 shadow-lg"
+            class="font-bold mt-4 bg-mustard text-black rounded p-4 shadow-lg"
           >
             Create NFT
           </button>

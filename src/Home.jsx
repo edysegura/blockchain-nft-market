@@ -93,7 +93,7 @@ class Home extends Nullstack {
                 <div class="p-4 bg-black">
                   <p class="text-2xl font-bold text-white">{nft.price} ETH</p>
                   <button
-                    class="mt-4 w-full bg-pink-500 text-white font-bold py-2 px-12 rounded"
+                    class="mt-4 w-full bg-mustard text-black font-bold py-2 px-12 rounded"
                     onclick={() => this.buyNFT({ nft })}
                   >
                     Buy
