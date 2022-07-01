@@ -48,6 +48,10 @@ class MyNFTs extends Nullstack {
     return nfts
   }
 
+  listNFT({ router, nft }) {
+    router.url = `/resell-nft?id=${nft.tokenId}&tokenUri=${nft.tokenUri}`
+  }
+
   render() {
     if (this.loading === false && !this.nfts.length)
       return <h1 class="py-10 px-20 text-3xl">No NFTs owned</h1>
@@ -64,7 +68,7 @@ class MyNFTs extends Nullstack {
                   </p>
                   <button
                     class="mt-4 w-full bg-pink-500 text-white font-bold py-2 px-12 rounded"
-                    onclick={() => console.log({ nft })}
+                    onclick={() => this.listNFT({ nft })}
                   >
                     List
                   </button>

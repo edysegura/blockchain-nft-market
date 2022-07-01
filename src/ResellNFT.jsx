@@ -1,11 +1,16 @@
 import Nullstack from 'nullstack'
 
 class ResellNFT extends Nullstack {
+  id
   price
   image
 
-  async hydrate({ params }) {
-    console.log({ params })
+  async hydrate({ params, fetchJson }) {
+    if (params.tokenUri) {
+      const meta = await fetchJson({ uri: params.tokenUri })
+      this.id = params.id
+      this.image = meta.image
+    }
   }
 
   async listNFTForSale({
@@ -28,11 +33,11 @@ class ResellNFT extends Nullstack {
     )
     const listingPrice = await contract.getListingPrice()
     const priceValue = listingPrice.toString()
-    const transaction = await contract.resellToken(id, priceFormatted, {
+    const transaction = await contract.resellToken(this.id, priceFormatted, {
       value: priceValue,
     })
     await transaction.wait()
-    router.href = '/'
+    router.url = '/'
   }
 
   render() {
