@@ -56,12 +56,11 @@ class Dashboard extends Nullstack {
         <div class="p-4">
           <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 pt-4">
             {this.nfts.map((nft) => (
-              <div class="border shadow rounded-xl overflow-hidden">
-                <img src={nft.image} class="rounded w-full h-[150px]" />
+              <div class="border p-2 overflow-hidden">
+                <img class="w-full h-[150px]" src={nft.image} alt={nft.name} />
                 <div class="p-4 bg-black">
-                  <p class="text-2xl font-bold text-white">
-                    Price - {nft.price} ETH
-                  </p>
+                  <span>Price</span>
+                  <p class="text-2xl font-bold text-white">{nft.price} ETH</p>
                 </div>
               </div>
             ))}
