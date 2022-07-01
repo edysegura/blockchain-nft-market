@@ -1,4 +1,4 @@
-# Blockchain Nft
+# Blockchain NFT
 
 <img src='https://raw.githubusercontent.com/nullstack/nullstack/master/nullstack.png' height='60' alt='Nullstack' />
 
@@ -19,7 +19,6 @@ NULLSTACK_SERVER_PORT="3000"
 
 Run the app in development mode:
 
-- `npm run hre:local-deploy`
 - `npm run hre:start`
 - `npm start`
 
