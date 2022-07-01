@@ -28,16 +28,18 @@ class Application extends Nullstack {
 
   render() {
     return (
-      <main>
-        <Head />
-        <Nav>
-          <Home route="/" />
-          <CreateNFT route="/create-nft" />
-          <MyNFTs route="/my-nfts" />
-          <Dashboard route="/dashboard" />
-          <ResellNFT route="/resell-nft" />
-        </Nav>
-      </main>
+      <div class="bg-black w-screen h-screen">
+        <div class="bg-black w-11/12 max-w-[1200px] m-auto h-screen text-white">
+          <Head />
+          <Nav>
+            <Home route="/" />
+            <CreateNFT route="/create-nft" />
+            <MyNFTs route="/my-nfts" />
+            <Dashboard route="/dashboard" />
+            <ResellNFT route="/resell-nft" />
+          </Nav>
+        </div>
+      </div>
     )
   }
 }
