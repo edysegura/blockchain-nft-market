@@ -15,10 +15,9 @@ class Header extends Nullstack {
       <div>
         <MyAccount />
         <div class="flex items-center justify-between p-6">
-          <h1 class="w-[175px] pt-5 pl-5 text-4xl text-center uppercase text-white">
-            <div class="font-bold text-sm">NFTS For</div>
-            <div class="font-extralight">Starving</div>
-            <div class="font-extralight">Children</div>
+          <h1 class="w-[175px] pt-5 pl-5 text-sm text-center uppercase text-white">
+            <div class="font-bold">NFTS For</div>
+            <div class="font-extralight text-2xl">Starving<br />Children</div>
           </h1>
           <nav>
             <div class="flex mt-4 text-white justify-end">
