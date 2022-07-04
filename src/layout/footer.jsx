@@ -18,9 +18,12 @@ export default function Footer() {
         <nav>
           <h2 class="font-bold text-lg mb-5">Marketplace</h2>
           <ul>
-            <li>WFT?</li>
-            <li>Explore</li>
-            <li>TAPs</li>
+            <li class="mb-3">WFT?</li>
+            <li class="mb-3">Explore</li>
+            <li class="mb-3">TAPs</li>
+            <li><a class="text-black hover:text-mustard" href="/create-nft">Create NFT</a></li>
+            <li><a class="text-black hover:text-mustard" href="/my-nfts">My NFT</a></li>
+            <li><a class="text-black hover:text-mustard" href="/dashboard">Dashboard</a></li>
           </ul>
         </nav>
       </div>

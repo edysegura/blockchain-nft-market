@@ -24,14 +24,14 @@ class Header extends Nullstack {
               <a class="mr-6 border-b-2 border-mustard" href="/">
                 Home
               </a>
-              <a class="mr-6" href="/create-nft">
-                Sell Digital Asset
+              <a class="mr-6" href="#">
+                WFT?
               </a>
-              <a class="mr-6" href="/my-nfts">
-                My Digital Assets
+              <a class="mr-6" href="/explore">
+                Explore
               </a>
-              <a class="mr-6" href="/dashboard">
-                Creator Dashboard
+              <a class="mr-6" href="#">
+                TAPs
               </a>
             </div>
           </nav>

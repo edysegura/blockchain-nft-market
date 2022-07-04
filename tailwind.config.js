@@ -4,7 +4,8 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        mustard: '#FDC709'
+        mustard: '#FDC709',
+        rose: '#FF8896'
       }
     },
   },
