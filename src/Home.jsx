@@ -59,8 +59,8 @@ class Home extends Nullstack {
           highlightedText="last shreds of hope"
         />
         <div class="flex justify-between">
-          <div class="w-72 flex flex-col justify-center">
-            <img src="/unimaginable-home.png" height="100" alt="" />
+          <div class="w-72 flex flex-col items-center">
+            <img src="/unimaginable-home.png" width={200} alt="" />
             <h3 class="font-extrabold mb-3">Unimaginable poverty</h3>
             <p>
               There are children raised in unimaginable poverty. Not only are
@@ -69,8 +69,8 @@ class Home extends Nullstack {
               NFTs.
             </p>
           </div>
-          <div class="w-72 flex flex-col justify-center">
-            <img src="/theyneedyou-home.png" height="100" alt="" />
+          <div class="w-72 flex flex-col items-center">
+            <img src="/theyneedyou-home.png" width={"200"} alt="" />
             <h3 class="font-extrabold mb-3">They need you</h3>
             <p>
               Please offer your support. Even if a warlord steals their family’s
@@ -78,8 +78,8 @@ class Home extends Nullstack {
               support.
             </p>
           </div>
-          <div class="w-72 flex flex-col justify-center">
-            <img src="/bottleofhope-home.png" height="100" alt="" />
+          <div class="w-72 flex flex-col items-center">
+            <img src="/bottleofhope-home.png" width={"200"} alt="" />
             <h3 class="font-extrabold mb-3">A bottle of hope</h3>
             <p>
             Every dehydrated child can receive an NFT of a water bottle today, if only you can find it in your heart and crypto-wallet to give.
