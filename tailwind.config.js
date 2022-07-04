@@ -5,8 +5,8 @@ module.exports = {
     extend: {
       colors: {
         mustard: '#FDC709',
-        rose: '#FF8896'
-      }
+        rose: '#FF8896',
+      },
     },
   },
   plugins: [],

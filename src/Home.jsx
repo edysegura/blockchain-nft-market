@@ -5,7 +5,7 @@ class Home extends Nullstack {
   renderTitle({ text, highlightedText }) {
     return (
       <h2 class="font-extrabold text-xl leading-relaxed mb-5">
-        <span class="drop-shadow-[0_0_20px_rgba(255,255,255,0.7)] shadow-white">
+        <span class="drop-shadow-[0_0_10px_rgba(255,255,255,0.7)] shadow-white">
           {text}{' '}
         </span>
         <span class="p-2 bg-mustard text-black drop-shadow-none shadow-black">
@@ -70,7 +70,7 @@ class Home extends Nullstack {
             </p>
           </div>
           <div class="w-72 flex flex-col items-center">
-            <img src="/theyneedyou-home.png" width={"200"} alt="" />
+            <img src="/theyneedyou-home.png" width={'200'} alt="" />
             <h3 class="font-extrabold mb-3">They need you</h3>
             <p>
               Please offer your support. Even if a warlord steals their family’s
@@ -79,12 +79,39 @@ class Home extends Nullstack {
             </p>
           </div>
           <div class="w-72 flex flex-col items-center">
-            <img src="/bottleofhope-home.png" width={"200"} alt="" />
+            <img src="/bottleofhope-home.png" width={'200'} alt="" />
             <h3 class="font-extrabold mb-3">A bottle of hope</h3>
             <p>
-            Every dehydrated child can receive an NFT of a water bottle today, if only you can find it in your heart and crypto-wallet to give.
+              Every dehydrated child can receive an NFT of a water bottle today,
+              if only you can find it in your heart and crypto-wallet to give.
             </p>
           </div>
+        </div>
+      </section>
+    )
+  }
+
+  renderBottomContent() {
+    return (
+      <section class="h-[400px] bg-[url('/grid.svg')]">
+        <div class="flex flex-col items-center">
+          <h2 class="font-extrabold text-xl leading-relaxed mb-5">
+            <span class="drop-shadow-[0_0_10px_rgba(255,255,255,0.7)] shadow-white">
+              With{' '}
+            </span>
+            <span class="p-2 bg-mustard text-black drop-shadow-none shadow-black">
+              great power
+            </span>
+            <span class="drop-shadow-[0_0_10px_rgba(255,255,255,0.7)] shadow-white">
+              {' '}
+              comes non-fungibility
+            </span>
+          </h2>
+          <p class="mb-16">
+            What Uncle Ben and Uncle Satoshi mean is that you can use your “power”
+            to change the world... by minting a few NFTs.
+          </p>
+          <a href="/explorer" class="uppercase p-4 bg-rose text-black font-extrabold">Buy a NFT to a Starving Child</a>
         </div>
       </section>
     )
@@ -95,6 +122,7 @@ class Home extends Nullstack {
       <>
         <TopContent />
         <MiddleContent />
+        <BottomContent />
       </>
     )
   }
