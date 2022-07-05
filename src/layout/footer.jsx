@@ -2,7 +2,7 @@ import Title from "./title";
 
 export default function Footer() {
   return (
-    <footer class="border-t border-white pt-8 pb-8">
+    <footer class="border-t border-white pt-8 pb-8 bg-black">
       <div class="flex w-11/12 justify-between">
         <div class="flex flex-col">
           <div class="uppercase text-white">

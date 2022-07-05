@@ -35,7 +35,7 @@ class Application extends Nullstack {
   render() {
     return (
       <>
-        <div class="bg-black w-11/12 max-w-[1200px] m-auto text-white">
+        <div class="w-11/12 max-w-[1200px] m-auto text-white">
           <Head />
           <Header />
           <main>
