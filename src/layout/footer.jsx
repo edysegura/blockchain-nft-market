@@ -20,11 +20,21 @@ export default function Footer() {
             Marketplace
           </h2>
           <ul>
-            <li class="mb-3">WFT?</li>
             <li class="mb-3">
-              <a href="/explore" class="hover:text-mustard">Explore</a>
+              <a href="/wtf" class="hover:text-mustard">
+                WFT?
+              </a>
             </li>
-            <li class="mb-3">TAPs</li>
+            <li class="mb-3">
+              <a href="/explore" class="hover:text-mustard">
+                Explore
+              </a>
+            </li>
+            <li class="mb-3">
+              <a href="/taps" class="hover:text-mustard">
+                TAPs
+              </a>
+            </li>
             <li>
               <a class="text-black hover:text-mustard" href="/create-nft">
                 Create NFT
