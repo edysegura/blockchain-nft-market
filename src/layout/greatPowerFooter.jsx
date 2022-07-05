@@ -1,6 +1,6 @@
 export default function GreatPowerFooter() {
   return (
-    <section class="h-[450px] bg-[url('/grid.svg')] bg-cover">
+    <section class="h-[425px] bg-[url('/grid.svg')] bg-cover">
       <div class="flex flex-col items-center pt-40">
         <h2 class="mb-5 text-xl font-extrabold leading-relaxed">
           <span class="shadow-white drop-shadow-[0_0_10px_rgba(255,255,255,0.7)]">
