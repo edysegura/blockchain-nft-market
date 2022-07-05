@@ -1,4 +1,5 @@
 import Nullstack from 'nullstack'
+import GreatPowerFooter from '../layout/greatPowerFooter'
 import Title from '../layout/title'
 
 class WTF extends Nullstack {
@@ -21,6 +22,7 @@ class WTF extends Nullstack {
     return (
       <>
         <TopContent />
+        <GreatPowerFooter />
       </>
     )
   }

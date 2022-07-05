@@ -1,4 +1,5 @@
 import Nullstack from 'nullstack'
+import GreatPowerFooter from '../layout/greatPowerFooter'
 import Title from '../layout/title'
 
 class TAPs extends Nullstack {
@@ -18,6 +19,7 @@ class TAPs extends Nullstack {
     return (
       <>
         <TopContent />
+        <GreatPowerFooter />
       </>
     )
   }

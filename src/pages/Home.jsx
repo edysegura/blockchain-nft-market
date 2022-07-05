@@ -1,5 +1,6 @@
 import Nullstack from 'nullstack'
 import Cube from '../layout/cube'
+import GreatPowerFooter from '../layout/greatPowerFooter'
 
 class Home extends Nullstack {
   renderTitle({ text, highlightedText }) {
@@ -91,43 +92,12 @@ class Home extends Nullstack {
     )
   }
 
-  renderBottomContent() {
-    return (
-      <section class="h-[500px] bg-[url('/grid.svg')] bg-cover">
-        <div class="flex flex-col items-center pt-40">
-          <h2 class="font-extrabold text-xl leading-relaxed mb-5">
-            <span class="drop-shadow-[0_0_10px_rgba(255,255,255,0.7)] shadow-white">
-              With{' '}
-            </span>
-            <span class="p-2 bg-mustard text-black drop-shadow-none shadow-black">
-              great power
-            </span>
-            <span class="drop-shadow-[0_0_10px_rgba(255,255,255,0.7)] shadow-white">
-              {' '}
-              comes non-fungibility
-            </span>
-          </h2>
-          <p class="mb-16">
-            What Uncle Ben and Uncle Satoshi mean is that you can use your
-            “power” to change the world... by minting a few NFTs.
-          </p>
-          <a
-            href="/explore"
-            class="uppercase p-2 text-center bg-rose text-black font-extrabold w-96"
-          >
-            Buy a NFT to a Starving Child
-          </a>
-        </div>
-      </section>
-    )
-  }
-
   render() {
     return (
       <>
         <TopContent />
         <MiddleContent />
-        <BottomContent />
+        <GreatPowerFooter />
       </>
     )
   }
