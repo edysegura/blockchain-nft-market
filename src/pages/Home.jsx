@@ -4,11 +4,10 @@ import GreatPowerFooter from '../layout/greatPowerFooter'
 import Title from '../layout/title'
 
 class Home extends Nullstack {
-
   renderTopContent() {
     return (
       <div class="flex justify-between">
-        <div class="w-96 mt-32 ml-14">
+        <div class="mt-32 ml-14 w-96">
           <Title
             text="Your kindness can make the world of a difference for a"
             highlightedText="child's crypto wallet"
@@ -17,16 +16,16 @@ class Home extends Nullstack {
             They may not have food, but you can help an NFT-less child with this
             buy one, give one opportunity. Every child deserves an NFT.
           </p>
-          <div class="flex gap-2 mt-4 font-extrabold">
+          <div class="mt-4 flex gap-2 font-extrabold">
             <a
               href="/explore"
-              class="w-32 p-2 bg-mustard text-black text-center"
+              class="w-32 bg-mustard p-2 text-center text-black"
             >
               Explore
             </a>
             <a
               href="/taps"
-              class="w-32 p-2 bg-transparent text-rose text-center border border-rose"
+              class="w-32 border border-rose bg-transparent p-2 text-center text-rose"
             >
               Buy TAPs
             </a>
@@ -43,15 +42,15 @@ class Home extends Nullstack {
 
   renderMiddleContent() {
     return (
-      <section class="text-center my-32">
+      <section class="my-32 text-center">
         <Title
           text="Don't let these weary children lose their"
           highlightedText="last shreds of hope"
         />
         <div class="flex justify-between">
-          <div class="w-72 flex flex-col items-center">
+          <div class="flex w-72 flex-col items-center">
             <img src="/unimaginable-home.png" width={200} alt="" />
-            <h3 class="font-extrabold mb-3">Unimaginable poverty</h3>
+            <h3 class="mb-3 font-extrabold">Unimaginable poverty</h3>
             <p>
               There are children raised in unimaginable poverty. Not only are
               they deprived of clean water, nutritious food, reliable
@@ -59,18 +58,18 @@ class Home extends Nullstack {
               NFTs.
             </p>
           </div>
-          <div class="w-72 flex flex-col items-center">
+          <div class="flex w-72 flex-col items-center">
             <img src="/theyneedyou-home.png" width={'200'} alt="" />
-            <h3 class="font-extrabold mb-3">They need you</h3>
+            <h3 class="mb-3 font-extrabold">They need you</h3>
             <p>
               Please offer your support. Even if a warlord steals their family’s
               smartphone, you will have provided a “token” of non-fungible
               support.
             </p>
           </div>
-          <div class="w-72 flex flex-col items-center">
+          <div class="flex w-72 flex-col items-center">
             <img src="/bottleofhope-home.png" width={'200'} alt="" />
-            <h3 class="font-extrabold mb-3">A bottle of hope</h3>
+            <h3 class="mb-3 font-extrabold">A bottle of hope</h3>
             <p>
               Every dehydrated child can receive an NFT of a water bottle today,
               if only you can find it in your heart and crypto-wallet to give.
