@@ -22,7 +22,7 @@ export default function Footer() {
           <ul>
             <li class="mb-3">WFT?</li>
             <li class="mb-3">
-              <a href="/explore">Explore</a>
+              <a href="/explore" class="hover:text-mustard">Explore</a>
             </li>
             <li class="mb-3">TAPs</li>
             <li>
