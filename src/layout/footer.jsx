@@ -1,3 +1,5 @@
+import Title from "./title";
+
 export default function Footer() {
   return (
     <footer class="border-t border-white pt-8 pb-8">
@@ -16,9 +18,7 @@ export default function Footer() {
           </p>
         </div>
         <nav>
-          <h2 class="mb-5 text-lg font-bold shadow-white drop-shadow-[0_0_10px_rgba(255,255,255,0.7)]">
-            Marketplace
-          </h2>
+          <Title text="Marketplace" />
           <ul>
             <li class="mb-3">
               <a href="/wtf" class="hover:text-mustard">
