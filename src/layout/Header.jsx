@@ -1,5 +1,5 @@
 import Nullstack from 'nullstack'
-import { AccountIcon } from '../icons/account'
+import AccountIcon from '../icons/account'
 
 class Header extends Nullstack {
   currentRouterStyle({ router, linkHref }) {

@@ -1,4 +1,4 @@
-export function AccountIcon() {
+export default function AccountIcon() {
   return (
     <svg
       width="20"
