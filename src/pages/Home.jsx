@@ -35,7 +35,7 @@ class Home extends Nullstack {
               Explore
             </a>
             <a
-              href="/buy-taps"
+              href="/taps"
               class="w-32 p-2 bg-transparent text-rose text-center border border-rose"
             >
               Buy TAPs
