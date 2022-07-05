@@ -1,20 +1,9 @@
 import Nullstack from 'nullstack'
 import Cube from '../layout/cube'
 import GreatPowerFooter from '../layout/greatPowerFooter'
+import Title from '../layout/title'
 
 class Home extends Nullstack {
-  renderTitle({ text, highlightedText }) {
-    return (
-      <h2 class="font-extrabold text-xl leading-relaxed mb-5">
-        <span class="drop-shadow-[0_0_10px_rgba(255,255,255,0.7)] shadow-white">
-          {text}{' '}
-        </span>
-        <span class="p-2 bg-mustard text-black drop-shadow-none shadow-black">
-          {highlightedText}
-        </span>
-      </h2>
-    )
-  }
 
   renderTopContent() {
     return (
