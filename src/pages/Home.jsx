@@ -1,5 +1,5 @@
 import Nullstack from 'nullstack'
-import Cube from './layout/cube'
+import Cube from '../layout/cube'
 
 class Home extends Nullstack {
   renderTitle({ text, highlightedText }) {
