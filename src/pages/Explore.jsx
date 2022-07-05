@@ -89,12 +89,13 @@ class Explore extends Nullstack {
       <div class="p-4 text-center">
         <Title text="Explore the starving children" />
         <div class="relative m-auto w-[600px]">
-          <span class="absolute z-10">
+          <span class="absolute top-2 left-14 z-10">
             <MagnifierIcon />
           </span>
           <input
             type="text"
-            class="w-[500px] border-b-2 border-white bg-black pl-8 text-2xl outline-none"
+            autofocus
+            class="w-[500px] border-b-2 border-white bg-black py-1 pl-9 text-2xl outline-none"
           />
         </div>
       </div>
