@@ -7,6 +7,8 @@ import MyNFTs from './admin/MyNFTs'
 import Header from './layout/Header'
 import ResellNFT from './admin/ResellNFT'
 import Explore from './pages/Explore'
+import WTF from './pages/WTF'
+import TAPs from './pages/TAPs'
 
 import './styles.css'
 import './application.scss'
@@ -38,7 +40,9 @@ class Application extends Nullstack {
           <Header />
           <main>
             <Home route="/" />
+            <WTF route="/wtf" />
             <Explore route="/explore" />
+            <TAPs route="/taps" />
             <CreateNFT route="/create-nft" />
             <MyNFTs route="/my-nfts" />
             <Dashboard route="/dashboard" />

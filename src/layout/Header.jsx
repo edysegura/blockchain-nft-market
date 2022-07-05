@@ -24,13 +24,13 @@ class Header extends Nullstack {
               <a class="mr-6 border-b-2 border-mustard" href="/">
                 Home
               </a>
-              <a class="mr-6" href="#">
+              <a class="mr-6" href="/wtf">
                 WFT?
               </a>
               <a class="mr-6" href="/explore">
                 Explore
               </a>
-              <a class="mr-6" href="#">
+              <a class="mr-6" href="/taps">
                 TAPs
               </a>
             </div>
