@@ -38,7 +38,7 @@ class Header extends Nullstack {
                 Home
               </a>
               <a class={`mr-6 ${this.currentRouterStyle({ linkHref: '/wtf' })}`} href="/wtf">
-                WFT?
+                WTF?
               </a>
               <a class={`mr-6 ${this.currentRouterStyle({ linkHref: '/explore' })}`} href="/explore">
                 Explore
