@@ -1,4 +1,6 @@
 import Nullstack from 'nullstack'
+import MagnifierIcon from '../icons/magnifier'
+import Title from '../layout/title'
 
 class Explore extends Nullstack {
   nftItems = []
@@ -74,27 +76,52 @@ class Explore extends Nullstack {
     this.hydrate()
   }
 
-  render() {
-    if (this.loading === false && !this.nftItems.length)
-      return <h1 class="px-20 py-10 text-3xl">No items in marketplace</h1>
+  renderNoContent() {
     return (
-      <section class="flex justify-center">
-        <div class="px-4">
-          <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 pt-4">
+      <section>
+        <h1 class="py-10 text-center text-3xl">No items in marketplace!</h1>
+      </section>
+    )
+  }
+
+  renderSearchField() {
+    return (
+      <div class="p-4 text-center">
+        <Title text="Explore the starving children" />
+        <div class="relative m-auto w-[600px]">
+          <span class="absolute z-10">
+            <MagnifierIcon />
+          </span>
+          <input
+            type="text"
+            class="w-[500px] border-b-2 border-white bg-black pl-8 text-2xl outline-none"
+          />
+        </div>
+      </div>
+    )
+  }
+
+  render() {
+    if (this.loading === false && !this.nftItems.length) return <NoContent />
+    return (
+      <section class="mb-32">
+        <div>
+          <SearchField />
+          <div class="grid grid-cols-1 gap-4 pt-4 sm:grid-cols-2 lg:grid-cols-4">
             {this.nftItems.map((nft) => (
-              <div class="border p-2 overflow-hidden">
-                <img class="w-full h-[150px]" src={nft.image} alt={nft.name} />
+              <div class="overflow-hidden border p-2">
+                <img src={nft.image} alt={nft.name} draggable="false" />
                 <div class="p-4">
                   <p class="text-2xl font-semibold">{nft.name}</p>
                   <div class="h-6 overflow-hidden">
                     <p class="text-white">{nft.description}</p>
                   </div>
                 </div>
-                <div class="p-4 bg-black">
+                <div class="bg-black p-4">
                   <span>Price</span>
                   <p class="text-2xl font-bold text-white">{nft.price} ETH</p>
                   <button
-                    class="mt-4 w-full bg-mustard text-black font-bold py-2 px-12 rounded"
+                    class="mt-4 w-full rounded bg-mustard py-2 px-12 font-bold text-black"
                     onclick={() => this.buyNFT({ nft })}
                   >
                     Buy
