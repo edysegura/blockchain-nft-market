@@ -81,9 +81,9 @@ class Explore extends Nullstack {
   filterNFTs() {
     console.log(this.filterValue)
     this.filteredNFTsItems = this.nftItems.filter((nft) => {
-      return nft.name
-        .toLowerCase()
-        .includes(this.filterValue.toLocaleLowerCase())
+      return `${nft.name.toLowerCase()} ${nft.description.toLocaleLowerCase()}`.includes(
+        this.filterValue.toLocaleLowerCase(),
+      )
     })
   }
 
