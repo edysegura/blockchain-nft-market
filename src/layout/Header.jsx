@@ -1,5 +1,6 @@
 import Nullstack from 'nullstack'
 import AccountIcon from '../icons/account'
+import NftSlogan from './nftSlogan'
 
 class Header extends Nullstack {
   currentRouterStyle({ router, linkHref }) {
@@ -11,7 +12,7 @@ class Header extends Nullstack {
   renderMyAccount() {
     return (
       <a href="#" class="flex items-center justify-end pt-3">
-        <AccountIcon /> <span class="ml-2">My Account</span>
+        <AccountIcon /> <span class="ml-2"><a href="/admin">My Account</a></span>
       </a>
     )
   }
@@ -21,14 +22,7 @@ class Header extends Nullstack {
       <div>
         <MyAccount />
         <div class="flex items-center justify-between p-6">
-          <h1 class="w-[175px] pt-5 pl-5 text-center text-sm uppercase text-white">
-            <div class="font-bold">NFTS For</div>
-            <div class="text-2xl font-extralight">
-              Starving
-              <br />
-              Children
-            </div>
-          </h1>
+          <NftSlogan />
           <nav>
             <div class="mt-4 flex justify-end text-white">
               <a
