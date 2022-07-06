@@ -1,7 +1,6 @@
 import Nullstack from 'nullstack'
 import ButtonLink from '../layout/buttonLink'
 import NftSlogan from '../layout/nftSlogan'
-import Title from '../layout/title'
 import CreateNFT from './CreateNFT'
 import Dashboard from './Dashboard'
 import MyNFTs from './MyNFTs'
