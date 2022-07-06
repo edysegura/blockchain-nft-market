@@ -6,6 +6,7 @@ import Title from '../layout/title'
 class Explore extends Nullstack {
   nftItems = []
   loading = true
+  filterValue = ''
 
   async hydrate() {
     this.loading = true
@@ -77,6 +78,15 @@ class Explore extends Nullstack {
     this.hydrate()
   }
 
+  filterNFTs() {
+    console.log(this.filterValue)
+    this.filteredNFTsItems = this.nftItems.filter((nft) => {
+      return nft.name
+        .toLowerCase()
+        .includes(this.filterValue.toLocaleLowerCase())
+    })
+  }
+
   renderNoContent() {
     return (
       <section>
@@ -97,6 +107,8 @@ class Explore extends Nullstack {
             type="text"
             autofocus
             class="w-[500px] border-b-2 border-white bg-black py-1 pl-9 text-2xl outline-none"
+            bind={this.filterValue}
+            oninput={this.filterNFTs}
           />
         </div>
       </div>
@@ -104,13 +116,14 @@ class Explore extends Nullstack {
   }
 
   render() {
+    const nftItems = this.filterValue ? this.filteredNFTsItems : this.nftItems
     if (this.loading === false && !this.nftItems.length) return <NoContent />
     return (
       <section class="mb-32">
         <div>
           <SearchField />
           <div class="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-4">
-            {this.nftItems.map((nft) => (
+            {nftItems.map((nft) => (
               <div class="overflow-hidden border p-2">
                 <img src={nft.image} alt={nft.name} draggable="false" />
                 <div class="mt-4">
