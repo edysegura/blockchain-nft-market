@@ -20,7 +20,6 @@ class Admin extends Nullstack {
           </header>
         </nav>
         <section class="w-4/5">
-          <Title text="Faucet" />
           <CreateNFT route="/admin/create-nft" />
           <MyNFTs route="/admin/my-nfts" />
           <Dashboard route="/admin/dashboard" />
