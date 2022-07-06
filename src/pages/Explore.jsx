@@ -124,7 +124,7 @@ class Explore extends Nullstack {
           <SearchField />
           <div class="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-4">
             {nftItems.map((nft) => (
-              <div class="overflow-hidden border p-2">
+              <div class="overflow-hidden border bg-black p-2">
                 <img src={nft.image} alt={nft.name} draggable="false" />
                 <div class="mt-4">
                   <p class="text-2xl font-semibold">{nft.name}</p>
