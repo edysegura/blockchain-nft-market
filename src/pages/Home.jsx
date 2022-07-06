@@ -1,4 +1,5 @@
 import Nullstack from 'nullstack'
+import ButtonLink from '../layout/buttonLink'
 import Cube from '../layout/cube'
 import GreatPowerFooter from '../layout/greatPowerFooter'
 import LandingPageLayout from '../layout/landingPage'
@@ -18,18 +19,13 @@ class Home extends Nullstack {
             buy one, give one opportunity. Every child deserves an NFT.
           </p>
           <div class="mt-4 flex gap-2 font-extrabold">
-            <a
-              href="/explore"
-              class="w-32 bg-mustard p-2 text-center text-black"
-            >
-              Explore
-            </a>
-            <a
+            <ButtonLink clazz="w-32" href="/explore">Explore</ButtonLink>
+            <ButtonLink
               href="/taps"
-              class="w-32 border border-rose bg-transparent p-2 text-center text-rose"
+              clazz="w-32 border border-rose bg-transparent text-rose"
             >
               Buy TAPs
-            </a>
+            </ButtonLink>
           </div>
         </div>
         <div>
