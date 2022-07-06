@@ -1,10 +1,11 @@
 import Nullstack from 'nullstack'
-import CreateNFT from './CreateNFT'
-import Dashboard from './Dashboard'
-import Home from './Home'
-import MyNFTs from './MyNFTs'
-import Nav from './Nav'
-import ResellNFT from './ResellNFT'
+import Admin from './admin/Admin'
+import Explore from './pages/Explore'
+import Home from './pages/Home'
+import TAPs from './pages/TAPs'
+import WTF from './pages/WTF'
+
+import './application.scss'
 import './styles.css'
 
 class Application extends Nullstack {
@@ -28,16 +29,14 @@ class Application extends Nullstack {
 
   render() {
     return (
-      <main>
+      <>
         <Head />
-        <Nav>
-          <Home route="/" />
-          <CreateNFT route="/create-nft" />
-          <MyNFTs route="/my-nfts" />
-          <Dashboard route="/dashboard" />
-          <ResellNFT route="/resell-nft" />
-        </Nav>
-      </main>
+        <Home route="/" />
+        <WTF route="/wtf" />
+        <Explore route="/explore" />
+        <TAPs route="/taps" />
+        <Admin route="/admin/*" />
+      </>
     )
   }
 }

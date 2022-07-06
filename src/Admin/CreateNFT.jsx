@@ -73,17 +73,17 @@ class CreateNFT extends Nullstack {
         <div class="w-1/2 flex flex-col pb-12">
           <input
             placeholder="Asset Name"
-            class="mt-8 border rounded p-4"
+            class="mt-8 border rounded p-4 text-black"
             bind={this.name}
           />
           <textarea
             placeholder="Asset Description"
-            class="mt-2 border rounded p-4"
+            class="mt-2 border rounded p-4 text-black"
             bind={this.description}
           />
           <input
             placeholder="Asset Price in ETH"
-            class="mt-2 border rounded p-4"
+            class="mt-2 border rounded p-4 text-black"
             bind={this.price}
           />
           <input
@@ -97,7 +97,7 @@ class CreateNFT extends Nullstack {
           )}
           <button
             onclick={this.listNFTForSale}
-            class="font-bold mt-4 bg-pink-500 text-white rounded p-4 shadow-lg"
+            class="font-bold mt-4 bg-mustard text-black rounded p-4 shadow-lg"
           >
             Create NFT
           </button>
