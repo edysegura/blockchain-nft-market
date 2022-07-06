@@ -1,3 +1,5 @@
+import ButtonLink from './buttonLink'
+
 export default function GreatPowerFooter() {
   return (
     <section class="h-[425px] bg-[url('/grid.svg')] bg-cover">
@@ -18,12 +20,9 @@ export default function GreatPowerFooter() {
           What Uncle Ben and Uncle Satoshi mean is that you can use your “power”
           to change the world... by minting a few NFTs.
         </p>
-        <a
-          href="/explore"
-          class="w-96 bg-rose p-2 text-center font-extrabold uppercase text-black"
-        >
+        <ButtonLink href="/explore" clazz="w-96 bg-rose uppercase">
           Buy a NFT to a Starving Child
-        </a>
+        </ButtonLink>
       </div>
     </section>
   )
