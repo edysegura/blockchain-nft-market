@@ -36,17 +36,17 @@ export default function Footer() {
               </a>
             </li>
             <li>
-              <a class="text-black hover:text-mustard" href="/create-nft">
+              <a class="text-black hover:text-mustard" href="/admin/create-nft">
                 Create NFT
               </a>
             </li>
             <li>
-              <a class="text-black hover:text-mustard" href="/my-nfts">
+              <a class="text-black hover:text-mustard" href="/admin/my-nfts">
                 My NFT
               </a>
             </li>
             <li>
-              <a class="text-black hover:text-mustard" href="/dashboard">
+              <a class="text-black hover:text-mustard" href="/admin/dashboard">
                 Dashboard
               </a>
             </li>

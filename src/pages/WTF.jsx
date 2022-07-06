@@ -1,6 +1,7 @@
 import Nullstack from 'nullstack'
 import WalletIcon from '../icons/wallet'
 import GreatPowerFooter from '../layout/greatPowerFooter'
+import LandingPageLayout from '../layout/landingPage'
 import Title from '../layout/title'
 
 class WTF extends Nullstack {
@@ -58,11 +59,11 @@ class WTF extends Nullstack {
 
   render() {
     return (
-      <>
+      <LandingPageLayout>
         <TopContent />
         <MiddleContent />
         <GreatPowerFooter />
-      </>
+      </LandingPageLayout>
     )
   }
 }

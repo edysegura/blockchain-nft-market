@@ -2,6 +2,7 @@ import Nullstack from 'nullstack'
 import TapIcon from '../icons/tap'
 import WalletIcon from '../icons/wallet'
 import GreatPowerFooter from '../layout/greatPowerFooter'
+import LandingPageLayout from '../layout/landingPage'
 import Title from '../layout/title'
 
 class TAPs extends Nullstack {
@@ -55,11 +56,11 @@ class TAPs extends Nullstack {
 
   render() {
     return (
-      <>
+      <LandingPageLayout>
         <TopContent />
         <BuyTap />
         <GreatPowerFooter />
-      </>
+      </LandingPageLayout>
     )
   }
 }

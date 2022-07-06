@@ -1,6 +1,7 @@
 import Nullstack from 'nullstack'
 import Cube from '../layout/cube'
 import GreatPowerFooter from '../layout/greatPowerFooter'
+import LandingPageLayout from '../layout/landingPage'
 import Title from '../layout/title'
 
 class Home extends Nullstack {
@@ -82,11 +83,11 @@ class Home extends Nullstack {
 
   render() {
     return (
-      <>
+      <LandingPageLayout>
         <TopContent />
         <MiddleContent />
         <GreatPowerFooter />
-      </>
+      </LandingPageLayout>
     )
   }
 }

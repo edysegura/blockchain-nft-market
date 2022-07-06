@@ -1,6 +1,7 @@
 import Nullstack from 'nullstack'
 import MagnifierIcon from '../icons/magnifier'
 import TapIcon from '../icons/tap'
+import LandingPageLayout from '../layout/landingPage'
 import Title from '../layout/title'
 
 class Explore extends Nullstack {
@@ -115,7 +116,7 @@ class Explore extends Nullstack {
     )
   }
 
-  render() {
+  renderContent() {
     const nftItems = this.filterValue ? this.filteredNFTsItems : this.nftItems
     if (this.loading === false && !this.nftItems.length) return <NoContent />
     return (
@@ -155,6 +156,14 @@ class Explore extends Nullstack {
           </div>
         </div>
       </section>
+    )
+  }
+
+  render() {
+    return (
+      <LandingPageLayout>
+        <Content />
+      </LandingPageLayout>
     )
   }
 }
