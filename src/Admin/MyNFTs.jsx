@@ -1,5 +1,6 @@
 import Nullstack from 'nullstack'
 import NftGrid from '../layout/nftGrid'
+import SimpleTitle from '../layout/simpleTitle'
 
 class MyNFTs extends Nullstack {
   nfts = []
@@ -55,14 +56,19 @@ class MyNFTs extends Nullstack {
   }
 
   render() {
-    if (this.loading === false && !this.nfts.length)
-      return <h1 class="py-10 px-20 text-3xl">No NFTs owned</h1>
     return (
-      <div class="flex justify-center">
-        <div class="p-4">
-          <NftGrid nfts={this.nfts} />
+      <section class="pl-36 pt-14">
+        <div>
+          <SimpleTitle>NFTs</SimpleTitle>
+          <p class="text-gray-300">Manage all your NFTs</p>
         </div>
-      </div>
+        <div class="mt-20">
+          {this.nfts?.length > 0 && <NftGrid nfts={this.nfts} />}
+          {this.loading === false && !this.nfts.length && (
+            <p class="text-3xl">No NFTs owned</p>
+          )}
+        </div>
+      </section>
     )
   }
 }
