@@ -29,7 +29,8 @@ class MyNFTs extends Nullstack {
       NFTMarketplace.abi,
       signer,
     )
-    const rawNFTs = await marketplaceContract.fetchMyNFTs()
+    // const rawNFTs = await marketplaceContract.fetchMyNFTs()
+    const rawNFTs = await marketplaceContract.fetchItemsListed()
 
     const nfts = await Promise.all(
       rawNFTs.map(async (nft) => {
@@ -57,7 +58,7 @@ class MyNFTs extends Nullstack {
 
   render() {
     return (
-      <section class="pl-36 pt-14">
+      <section class="pl-10 pt-14">
         <div>
           <SimpleTitle>NFTs</SimpleTitle>
           <p class="text-gray-300">Manage all your NFTs</p>
