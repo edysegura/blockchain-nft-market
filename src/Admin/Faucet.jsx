@@ -1,6 +1,7 @@
 import Nullstack from 'nullstack'
 import FaucetIcon from '../icons/faucet'
 import TapIcon from '../icons/tap'
+import ButtonLink from '../layout/buttonLink'
 import Label from '../layout/label'
 import SimpleTitle from '../layout/simpleTitle'
 import TextControl from '../layout/textControl'
@@ -31,6 +32,9 @@ class Faucet extends Nullstack {
             <div>
               <TapIcon />
             </div>
+          </div>
+          <div>
+            <ButtonLink>Mint &amp; Send</ButtonLink>
           </div>
         </div>
       </section>
