@@ -19,7 +19,9 @@ class Home extends Nullstack {
             buy one, give one opportunity. Every child deserves an NFT.
           </p>
           <div class="mt-4 flex gap-2 font-extrabold">
-            <ButtonLink clazz="w-32" href="/explore">Explore</ButtonLink>
+            <ButtonLink clazz="w-32" href="/explore">
+              Explore
+            </ButtonLink>
             <ButtonLink
               href="/taps"
               clazz="w-32 border border-rose bg-transparent text-rose"
@@ -29,7 +31,12 @@ class Home extends Nullstack {
           </div>
         </div>
         <div>
-          <div class="scale-75">
+          <div class="relative scale-75">
+            <img
+              class="absolute top-[2px] left-[1px] border-2 border-white"
+              src="/girl-home.png"
+              alt="girl"
+            />
             <Cube />
           </div>
         </div>
