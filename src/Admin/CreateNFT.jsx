@@ -62,11 +62,6 @@ class CreateNFT extends Nullstack {
     router.url = '/'
   }
 
-  async testForm() {
-    const { name, description, price, fileUrl } = this
-    console.log({ name, description, price, fileUrl })
-  }
-
   render() {
     return (
       <div class="flex justify-center">
