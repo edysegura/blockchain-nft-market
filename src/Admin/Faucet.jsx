@@ -5,7 +5,6 @@ import ButtonLink from '../layout/buttonLink'
 import Label from '../layout/label'
 import SimpleTitle from '../layout/simpleTitle'
 import TextControl from '../layout/textControl'
-import Title from '../layout/title'
 
 class Faucet extends Nullstack {
   render() {
