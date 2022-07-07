@@ -2,13 +2,13 @@ import Nullstack from 'nullstack'
 import AccountIcon from '../icons/account'
 import CollectionIcon from '../icons/collection'
 import CubeIcon from '../icons/cube'
-import Faucet from '../icons/faucet'
+import FaucetIcon from '../icons/faucet'
 import TraitsIcon from '../icons/traits'
 import ButtonLink from '../layout/buttonLink'
 import NftSlogan from '../layout/nftSlogan'
 import CreateNFT from './CreateNFT'
 import Dashboard from './Dashboard'
-import Home from './Home'
+import Faucet from './Faucet'
 import MyNFTs from './MyNFTs'
 import ResellNFT from './ResellNFT'
 
@@ -44,7 +44,7 @@ class Admin extends Nullstack {
         </div>
         <div class="mt-10 flex flex-col">
           <Link href="/admin">
-            <Faucet color="#FFF" width="18" />
+            <FaucetIcon color="#FFF" width="18" />
             Faucet
           </Link>
           <Link href="/admin/my-nfts">
@@ -73,7 +73,7 @@ class Admin extends Nullstack {
       <main class="flex min-h-screen w-full max-w-7xl 2xl:mx-auto">
         <Nav />
         <section class="w-4/5">
-          <Home route="/admin" />
+          <Faucet route="/admin" />
           <CreateNFT route="/admin/create-nft" />
           <MyNFTs route="/admin/my-nfts" />
           <Dashboard route="/admin/dashboard" />
