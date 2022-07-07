@@ -12,7 +12,7 @@ class WTF extends Nullstack {
           text="Treat your charity like your investments"
           highlightedText="- Expect ROI"
         />
-        <p class="mb-10">
+        <p class="my-10">
           Bringing attention to effective altruism, and reminding you that not
           all charities are created equal
         </p>
