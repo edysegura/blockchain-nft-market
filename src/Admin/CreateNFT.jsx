@@ -1,4 +1,7 @@
 import Nullstack from 'nullstack'
+import ImagePlaceholder from '../layout/imagePlaceholder'
+import Label from '../layout/label'
+import SimpleTitle from '../layout/simpleTitle'
 
 class CreateNFT extends Nullstack {
   name = ''
@@ -59,26 +62,26 @@ class CreateNFT extends Nullstack {
       value: priceValue,
     })
     await transaction.wait()
-    router.url = '/'
+    router.url = '/admin/my-nfts'
   }
 
-  render() {
+  renderBackup() {
     return (
       <div class="flex justify-center">
-        <div class="w-1/2 flex flex-col pb-12">
+        <div class="flex w-1/2 flex-col pb-12">
           <input
             placeholder="Asset Name"
-            class="mt-8 border rounded p-4 text-black"
+            class="mt-8 rounded border p-4 text-black"
             bind={this.name}
           />
           <textarea
             placeholder="Asset Description"
-            class="mt-2 border rounded p-4 text-black"
+            class="mt-2 rounded border p-4 text-black"
             bind={this.description}
           />
           <input
             placeholder="Asset Price in ETH"
-            class="mt-2 border rounded p-4 text-black"
+            class="mt-2 rounded border p-4 text-black"
             bind={this.price}
           />
           <input
@@ -88,16 +91,54 @@ class CreateNFT extends Nullstack {
             oninput={this.uploadImageToIPFS}
           />
           {this.fileUrl && (
-            <img class="rounded mt-4" width="350" src={this.fileUrl} />
+            <img class="mt-4 rounded" width="350" src={this.fileUrl} />
           )}
           <button
             onclick={this.listNFTForSale}
-            class="font-bold mt-4 bg-mustard text-black rounded p-4 shadow-lg"
+            class="mt-4 rounded bg-mustard p-4 font-bold text-black shadow-lg"
           >
             Create NFT
           </button>
         </div>
       </div>
+    )
+  }
+
+  render() {
+    return (
+      <section class="flex justify-between gap-16 pl-10 pt-14">
+        {/* SIDE A */}
+        <div>
+          <div>
+            <SimpleTitle>Create a new NFT</SimpleTitle>
+          </div>
+          <div class="mt-10 flex flex-col gap-4">
+            <Label>Image, Video, Audio, or 3D Model *</Label>
+            <p class="text-xs text-gray-300">
+              File types supported: JPG, PNG, GIF, SVG, MP4, WEBM, MP3, WAV,
+              OGG, GLB, GLTF. Max size: 100 MB
+            </p>
+            <div class="flex h-24 items-center justify-center border-2 border-dashed border-white">
+              <ImagePlaceholder />
+            </div>
+          </div>
+        </div>
+        {/* SIDE B */}
+        <div>
+          <div>
+            <SimpleTitle>
+              <span class="text-rose">Side B</span> - NFT for donation
+            </SimpleTitle>
+          </div>
+          <div class="mt-10">
+            <Label>Image, Video, Audio, or 3D Model *</Label>
+            <p class="text-xs text-gray-300">
+              File types supported: JPG, PNG, GIF, SVG, MP4, WEBM, MP3, WAV,
+              OGG, GLB, GLTF. Max size: 100 MB
+            </p>
+          </div>
+        </div>
+      </section>
     )
   }
 }
