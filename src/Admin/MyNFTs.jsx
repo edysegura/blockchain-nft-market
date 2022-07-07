@@ -1,4 +1,5 @@
 import Nullstack from 'nullstack'
+import NftGrid from '../layout/nftGrid'
 
 class MyNFTs extends Nullstack {
   nfts = []
@@ -40,7 +41,8 @@ class MyNFTs extends Nullstack {
           seller: nft.seller,
           owner: nft.owner,
           image: meta.image,
-          tokenUri,
+          name: meta.name,
+          description: meta.description,
         }
         return item
       }),
@@ -58,23 +60,7 @@ class MyNFTs extends Nullstack {
     return (
       <div class="flex justify-center">
         <div class="p-4">
-          <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 pt-4">
-            {this.nfts.map((nft) => (
-              <div class="border p-2 overflow-hidden">
-                <img class="w-full h-[150px]" src={nft.image} alt={nft.name} />
-                <div class="p-4 bg-black">
-                  <span>Price</span>
-                  <p class="text-2xl font-bold text-white">{nft.price} ETH</p>
-                  <button
-                    class="mt-4 w-full bg-mustard text-black font-bold py-2 px-12 rounded"
-                    onclick={() => this.listNFT({ nft })}
-                  >
-                    List
-                  </button>
-                </div>
-              </div>
-            ))}
-          </div>
+          <NftGrid nfts={this.nfts} />
         </div>
       </div>
     )
