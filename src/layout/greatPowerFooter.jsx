@@ -1,21 +1,11 @@
 import ButtonLink from './buttonLink'
+import Title from './title'
 
 export default function GreatPowerFooter() {
   return (
     <section class="h-[425px] bg-[url('/grid.svg')] bg-cover">
       <div class="flex flex-col items-center pt-40">
-        <h2 class="mb-5 text-xl font-extrabold leading-relaxed">
-          <span class="shadow-white drop-shadow-[0_0_10px_rgba(255,255,255,0.7)]">
-            With{' '}
-          </span>
-          <span class="bg-mustard p-2 text-black shadow-black drop-shadow-none">
-            great power
-          </span>
-          <span class="shadow-white drop-shadow-[0_0_10px_rgba(255,255,255,0.7)]">
-            {' '}
-            comes non-fungibility
-          </span>
-        </h2>
+        <Title text="With" highlightedText="great power" secondaryText="comes non-fungibility" />
         <p class="mb-16">
           What Uncle Ben and Uncle Satoshi mean is that you can use your “power”
           to change the world... by minting a few NFTs.
