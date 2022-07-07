@@ -2,6 +2,7 @@ import Nullstack from 'nullstack'
 import ImagePlaceholder from '../layout/imagePlaceholder'
 import Label from '../layout/label'
 import SimpleTitle from '../layout/simpleTitle'
+import TextControl from '../layout/textControl'
 
 class CreateNFT extends Nullstack {
   name = ''
@@ -121,6 +122,10 @@ class CreateNFT extends Nullstack {
             <div class="flex h-24 items-center justify-center border-2 border-dashed border-white">
               <ImagePlaceholder />
             </div>
+          </div>
+          <div class="mt-4 flex flex-col gap-4">
+            <TextControl label="Name *" />
+            <TextControl label="Price *" />
           </div>
         </div>
         {/* SIDE B */}
