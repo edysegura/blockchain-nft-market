@@ -19,7 +19,7 @@ export default function Footer() {
         </div>
         <nav>
           <Title text="Marketplace" />
-          <ul>
+          <ul class="mt-5">
             <li class="mb-3">
               <a href="/wtf" class="hover:text-mustard">
                 WFT?
