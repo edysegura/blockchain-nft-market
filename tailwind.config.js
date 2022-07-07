@@ -6,6 +6,7 @@ module.exports = {
       colors: {
         mustard: '#FDC709',
         rose: '#FF8896',
+        'light-mustard': '#FFC701',
       },
     },
   },
