@@ -1,4 +1,4 @@
-export default function Faucet({ color = '#FFC701', width = 42 }) {
+export default function FaucetIcon({ color = '#FFC701', width = 42 }) {
   return (
     <svg
       width={width}

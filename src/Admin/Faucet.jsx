@@ -1,13 +1,13 @@
 import Nullstack from 'nullstack'
-import Faucet from '../icons/faucet'
+import FaucetIcon from '../icons/faucet'
 import Title from '../layout/title'
 
-class Home extends Nullstack {
+class Faucet extends Nullstack {
   render() {
     return (
       <section>
         <div>
-          <Faucet />
+          <FaucetIcon />
           <Title text="Faucet" />
         </div>
       </section>
@@ -15,4 +15,4 @@ class Home extends Nullstack {
   }
 }
 
-export default Home
+export default Faucet
