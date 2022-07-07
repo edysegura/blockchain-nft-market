@@ -51,7 +51,7 @@ class Home extends Nullstack {
           text="Don't let these weary children lose their"
           highlightedText="last shreds of hope"
         />
-        <div class="flex justify-between">
+        <div class="mt-10 flex justify-between">
           <div class="flex w-72 flex-col items-center">
             <img src="/unimaginable-home.png" width={200} alt="" />
             <h3 class="mb-3 font-extrabold">Unimaginable poverty</h3>
