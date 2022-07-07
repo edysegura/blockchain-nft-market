@@ -70,7 +70,7 @@ class Admin extends Nullstack {
 
   render() {
     return (
-      <main class="flex min-h-screen w-full max-w-7xl 2xl:mx-auto">
+      <main class="flex min-h-screen w-full max-w-[1680px] 2xl:mx-auto bg-gray-900">
         <Nav />
         <section class="w-4/5">
           <Faucet route="/admin" />
