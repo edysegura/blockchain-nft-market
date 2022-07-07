@@ -2,6 +2,7 @@ import Nullstack from 'nullstack'
 import MagnifierIcon from '../icons/magnifier'
 import TapIcon from '../icons/tap'
 import LandingPageLayout from '../layout/landingPage'
+import SimpleTitle from '../layout/simpleTitle'
 import Title from '../layout/title'
 
 class Explore extends Nullstack {
@@ -99,8 +100,8 @@ class Explore extends Nullstack {
   renderSearchField() {
     return (
       <div class="mb-20 p-4 text-center">
-        <Title text="Explore the starving children" />
-        <div class="relative m-auto w-[600px]">
+        <SimpleTitle>Explore the starting children</SimpleTitle>
+        <div class="relative m-auto w-[600px] mt-10">
           <span class="absolute top-2 left-14 z-10">
             <MagnifierIcon />
           </span>
