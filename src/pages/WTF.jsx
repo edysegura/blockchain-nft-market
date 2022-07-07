@@ -1,5 +1,6 @@
 import Nullstack from 'nullstack'
 import WalletIcon from '../icons/wallet'
+import ButtonLink from '../layout/buttonLink'
 import GreatPowerFooter from '../layout/greatPowerFooter'
 import LandingPageLayout from '../layout/landingPage'
 import Title from '../layout/title'
@@ -46,12 +47,9 @@ class WTF extends Nullstack {
             Note: All monetary proceeds from this project will be donated to
             charities deemed effective by GiveWell.
           </p>
-          <a
-            href="https://www.givingwhatwecan.org/best-charities-to-donate-to-2022"
-            class="m-auto w-64 bg-mustard p-2 text-center font-extrabold text-black"
-          >
+          <ButtonLink href="https://www.givingwhatwecan.org/best-charities-to-donate-to-2022">
             Givin what we can
-          </a>
+          </ButtonLink>
         </div>
       </section>
     )
