@@ -9,7 +9,7 @@ import TextControl from '../layout/textControl'
 class Faucet extends Nullstack {
   render() {
     return (
-      <section class="pl-36 pt-14">
+      <section class="pl-10 pt-14">
         <div class="mb-10 flex items-center gap-3">
           <FaucetIcon />
           <SimpleTitle>Faucet</SimpleTitle>
