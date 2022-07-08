@@ -1,4 +1,5 @@
 import Nullstack from 'nullstack'
+import addressShortener from '../helpers/addressShortener'
 import AdminAccountIcon from '../icons/adminAccount'
 import CollectionIcon from '../icons/collection'
 import CubeIcon from '../icons/cube'
@@ -15,6 +16,12 @@ import MyNFTs from './MyNFTs'
 import ResellNFT from './ResellNFT'
 
 class Admin extends Nullstack {
+  update({ router, walletAddress }) {
+    if (!walletAddress) {
+      router.url = '/'
+    }
+  }
+
   currentRouterStyle({ router, href }) {
     if (router.url === href) {
       return 'border-y bg-gradient-to-r border-light-mustard/50 from-light-mustard/30'
@@ -70,17 +77,30 @@ class Admin extends Nullstack {
     )
   }
 
-  renderLogout() {
+  logout(context) {
+    if (confirm('Sign out')) {
+      const { router } = context
+      context.walletAddress = null
+      window.localStorage.removeItem('walletAddress')
+      router.url = '/'
+    }
+  }
+
+  renderLogout({ walletAddress }) {
     return (
       <div class="absolute right-10 top-5 flex gap-5">
         <div class="flex items-center gap-1">
           <WalletIcon width={16} color="#FFC701" />
-          <span>0x632b...4u9e</span>
+          <span title={walletAddress}>
+            {addressShortener({ address: walletAddress })}
+          </span>
         </div>
         <div class="flex items-center gap-1">
           <LogoutIcon />{' '}
           <span>
-            <a href="/">logout</a>
+            <a class="cursor-pointer" onclick={this.logout}>
+              logout
+            </a>
           </span>
         </div>
       </div>
