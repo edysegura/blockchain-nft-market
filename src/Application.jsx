@@ -1,5 +1,5 @@
 import Nullstack from 'nullstack'
-import Admin from './admin/Admin'
+import Admin from './Admin/Admin'
 import Explore from './pages/Explore'
 import Home from './pages/Home'
 import TAPs from './pages/TAPs'
