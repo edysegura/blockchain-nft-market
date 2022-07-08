@@ -1,8 +1,9 @@
-export default function ButtonLink({ href, clazz, children }) {
+export default function ButtonLink({ href, clazz, onclick, children }) {
   return (
     <a
       href={href}
-      class={`bg-mustard p-2 text-center font-extrabold text-black ${clazz}`}
+      onclick={onclick}
+      class={`cursor-pointer bg-mustard p-2 text-center font-extrabold text-black ${clazz}`}
     >
       {children}
     </a>
