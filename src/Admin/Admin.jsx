@@ -1,5 +1,6 @@
 import Nullstack from 'nullstack'
 import AccountIcon from '../icons/account'
+import AdminAccountIcon from '../icons/adminAccount'
 import CollectionIcon from '../icons/collection'
 import CubeIcon from '../icons/cube'
 import FaucetIcon from '../icons/faucet'
@@ -60,7 +61,7 @@ class Admin extends Nullstack {
             Traits
           </Link>
           <Link href="#">
-            <AccountIcon />
+            <AdminAccountIcon />
             Account
           </Link>
         </div>
