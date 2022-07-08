@@ -35,7 +35,7 @@ class Admin extends Nullstack {
 
   renderNav() {
     return (
-      <nav class="h-full min-h-screen w-1/5 bg-black">
+      <nav class="min-h-screen w-1/5 bg-black">
         <div class="flex flex-col items-center gap-5">
           <NftSlogan />
           <ButtonLink clazz="w-32" href="/admin/create-nft">
