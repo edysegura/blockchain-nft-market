@@ -3,9 +3,30 @@ import ButtonLink from '../layout/buttonLink'
 import Cube from '../layout/cube'
 import GreatPowerFooter from '../layout/greatPowerFooter'
 import LandingPageLayout from '../layout/landingPage'
+import NftCard from '../layout/nftCard'
+import NftGrid from '../layout/nftGrid'
 import Title from '../layout/title'
 
 class Home extends Nullstack {
+  nfts = [
+    {
+      tokenId: 1,
+      image:
+        'https://ipfs.infura.io/ipfs/QmXnjJQNBnCqKYRC6tswBCTCL3scZQpdg7iNWvvNcJfipa',
+      name: 'Side A',
+      description: 'Side A text description',
+      price: '0.49',
+    },
+    {
+      tokenId: 2,
+      image:
+        'https://ipfs.infura.io/ipfs/QmXnjJQNBnCqKYRC6tswBCTCL3scZQpdg7iNWvvNcJfipa',
+      name: 'Side B',
+      description: 'Side B text description',
+      price: '0.49',
+    },
+  ]
+
   renderTopContent() {
     return (
       <div class="flex justify-between">
@@ -84,11 +105,32 @@ class Home extends Nullstack {
     )
   }
 
+  renderSecondMiddleContent() {
+    return (
+      <section class="my-32 flex justify-between gap-5">
+        <div class="flex w-1/2 flex-col justify-center gap-4 pl-40">
+          <Title
+            text="Buy a NFT of a dehydrated child and automatically donate a NFT of a water bottle"
+            highlightedText="NFT of a water bottle"
+          />
+          <p class="text-gray-300">
+            Treat your charity like your investments. Expect ROI.
+          </p>
+        </div>
+        <div class="flex w-1/2 justify-center gap-4">
+          <NftCard nft={this.nfts[0]} />
+          <NftCard nft={this.nfts[1]} />
+        </div>
+      </section>
+    )
+  }
+
   render() {
     return (
       <LandingPageLayout>
         <TopContent />
         <MiddleContent />
+        <SecondMiddleContent />
         <GreatPowerFooter />
       </LandingPageLayout>
     )
