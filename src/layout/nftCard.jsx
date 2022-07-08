@@ -2,7 +2,7 @@ import TapIcon from '../icons/tap'
 
 export default function NftCard({ nft }) {
   return (
-    <div class="overflow-hidden border bg-black p-2">
+    <div class="overflow-hidden flex flex-col border bg-black p-2">
       <img src={nft.image} alt={nft.name} draggable="false" />
       <div class="mt-4">
         <p class="text-2xl font-semibold">{nft.name}</p>
@@ -12,7 +12,7 @@ export default function NftCard({ nft }) {
       </div>
       <div class="mt-4">
         <span>Price</span>
-        <div class="flex items-end justify-between">
+        <div class="flex gap-2 items-end justify-between">
           <p class="flex text-2xl font-bold text-white">
             <span class="mt-2 mr-2">
               <TapIcon />
