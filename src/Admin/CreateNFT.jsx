@@ -12,13 +12,20 @@ class CreateNFT extends Nullstack {
   price = ''
   fileUrl = ''
 
+  nameSideB = ''
+  descriptionSideB = ''
+  priceSideB = ''
+  fileUrlSideB = ''
+
   async uploadImageToIPFS({ settings, ipfsClient, event }) {
     const file = event.target.files[0]
+    const inputId = event.target.id
     try {
       const added = await ipfsClient.add(file, {
         progress: (prog) => console.log(`received: ${prog}`),
       })
-      this.fileUrl = `${settings.ipfsUrl}/${added.path}`
+      const property = inputId.includes('SideA') ? 'fileUrl' : 'fileUrlSideB'
+      this[property] = `${settings.ipfsUrl}/${added.path}`
     } catch (error) {
       console.log('Error uploading file: ', error)
     }
@@ -72,10 +79,10 @@ class CreateNFT extends Nullstack {
     router.url = '/admin/my-nfts'
   }
 
-  renderImageUpload({ id }) {
+  renderImageUpload({ id, field }) {
     return (
       <div class="flex max-h-fit items-center justify-center border-2 border-dashed border-white p-4">
-        {!this.fileUrl && (
+        {!field && (
           <div
             class="flex w-full cursor-pointer justify-center"
             onclick={() => document.getElementById(id).click()}
@@ -83,19 +90,18 @@ class CreateNFT extends Nullstack {
             <ImagePlaceholder />
           </div>
         )}
-        {this.fileUrl && (
+        {field && (
           <img
             onclick={() => document.getElementById(id).click()}
             class="cursor-pointer rounded"
             width="150"
-            src={this.fileUrl}
+            src={field}
           />
         )}
         <input
           hidden
           type="file"
           id={id}
-          name="sideAFile"
           accept="image/*"
           oninput={this.uploadImageToIPFS}
         />
@@ -117,7 +123,7 @@ class CreateNFT extends Nullstack {
               File types supported: JPG, PNG, GIF, SVG, MP4, WEBM, MP3, WAV,
               OGG, GLB, GLTF. Max size: 100 MB
             </p>
-            <ImageUpload id="fileSideA" />
+            <ImageUpload id="fileSideA" field={this.fileUrl} />
           </div>
           <div class="mt-4 flex flex-col gap-4">
             <TextControl bind={this.name} label="Name *" />
@@ -148,12 +154,31 @@ class CreateNFT extends Nullstack {
               <span class="text-rose">Side B</span> - NFT for donation
             </SimpleTitle>
           </div>
-          <div class="mt-10">
+          <div class="mt-10 flex flex-col gap-4">
             <Label>Image, Video, Audio, or 3D Model *</Label>
             <p class="text-xs text-gray-300">
               File types supported: JPG, PNG, GIF, SVG, MP4, WEBM, MP3, WAV,
               OGG, GLB, GLTF. Max size: 100 MB
             </p>
+            <ImageUpload id="fileSideB" field={this.fileUrlSideB} />
+          </div>
+          <div class="mt-4 flex flex-col gap-4">
+            <TextControl bind={this.nameSideB} label="Name *" />
+            <TextControl bind={this.externalLinkSideB} label="External Link" />
+            <div>
+              <TextControl bind={this.maxEditionSideB} label="Max Editions" />
+              <p class="mt-1 text-xs text-gray-300">
+                Number of Editions that will be created
+              </p>
+            </div>
+            <div>
+              <TextareaControl
+                bind={this.descriptionSideB}
+                label="Description *"
+                hint="The description will be included on the item's detail page underneath its image. Markdown syntax is supported."
+              />
+            </div>
+            <TextControl bind={this.price} label="Price *" />
           </div>
         </div>
       </section>
