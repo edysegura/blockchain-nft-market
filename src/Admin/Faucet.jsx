@@ -28,8 +28,11 @@ class Faucet extends Nullstack {
                 Put the quantity of TAPs you'll need
               </span>
             </div>
-            <div>
-              <TapIcon />
+            <div class="flex items-center">
+              <div class="p-[11px] border-y border-l border-white bg-black">
+                <TapIcon />
+              </div>
+              <TextControl />
             </div>
           </div>
           <div>
