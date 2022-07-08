@@ -1,4 +1,5 @@
 import Nullstack from 'nullstack'
+import ButtonLink from '../layout/buttonLink'
 import ImagePlaceholder from '../layout/imagePlaceholder'
 import Label from '../layout/label'
 import SimpleTitle from '../layout/simpleTitle'
@@ -25,7 +26,10 @@ class CreateNFT extends Nullstack {
 
   async uploadToIPFS({ settings, ipfsClient }) {
     const { name, description, price, fileUrl } = this
-    if (!name || !description || !price || !fileUrl) return
+    if (!name || !description || !price || !fileUrl) {
+      alert('Error!')
+      return null
+    }
     const data = JSON.stringify({
       name,
       description,
@@ -48,6 +52,7 @@ class CreateNFT extends Nullstack {
     Web3Modal,
   }) {
     const url = await this.uploadToIPFS()
+    if (!url) return
     const web3Modal = new Web3Modal()
     const connection = await web3Modal.connect()
     const provider = new ethers.providers.Web3Provider(connection)
@@ -67,48 +72,9 @@ class CreateNFT extends Nullstack {
     router.url = '/admin/my-nfts'
   }
 
-  renderBackup() {
-    return (
-      <div class="flex justify-center">
-        <div class="flex w-1/2 flex-col pb-12">
-          <input
-            placeholder="Asset Name"
-            class="mt-8 rounded border p-4 text-black"
-            bind={this.name}
-          />
-          <textarea
-            placeholder="Asset Description"
-            class="mt-2 rounded border p-4 text-black"
-            bind={this.description}
-          />
-          <input
-            placeholder="Asset Price in ETH"
-            class="mt-2 rounded border p-4 text-black"
-            bind={this.price}
-          />
-          <input
-            type="file"
-            name="Asset"
-            class="my-4"
-            oninput={this.uploadImageToIPFS}
-          />
-          {this.fileUrl && (
-            <img class="mt-4 rounded" width="350" src={this.fileUrl} />
-          )}
-          <button
-            onclick={this.listNFTForSale}
-            class="mt-4 rounded bg-mustard p-4 font-bold text-black shadow-lg"
-          >
-            Create NFT
-          </button>
-        </div>
-      </div>
-    )
-  }
-
   renderImageUpload({ id }) {
     return (
-      <div class="flex h-fit items-center justify-center border-2 border-dashed border-white p-2">
+      <div class="flex max-h-fit items-center justify-center border-2 border-dashed border-white p-4">
         {!this.fileUrl && (
           <div
             class="flex w-full cursor-pointer justify-center"
@@ -139,7 +105,7 @@ class CreateNFT extends Nullstack {
 
   render() {
     return (
-      <section class="flex gap-24 pl-10 pt-14">
+      <section class="flex gap-24 py-14 pl-10">
         {/* SIDE A */}
         <div class="w-96">
           <div>
@@ -155,9 +121,9 @@ class CreateNFT extends Nullstack {
           </div>
           <div class="mt-4 flex flex-col gap-4">
             <TextControl bind={this.name} label="Name *" />
-            <TextControl bind={this.name} label="External Link" />
+            <TextControl bind={this.externalLink} label="External Link" />
             <div>
-              <TextControl bind={this.name} label="Max Editions" />
+              <TextControl bind={this.maxEdition} label="Max Editions" />
               <p class="mt-1 text-xs text-gray-300">
                 Number of Editions that will be created
               </p>
@@ -165,11 +131,14 @@ class CreateNFT extends Nullstack {
             <div>
               <TextareaControl
                 bind={this.description}
-                label="Description"
+                label="Description *"
                 hint="The description will be included on the item's detail page underneath its image. Markdown syntax is supported."
               />
             </div>
             <TextControl bind={this.price} label="Price *" />
+            <ButtonLink clazz="w-32" onclick={this.listNFTForSale}>
+              Create NFT
+            </ButtonLink>
           </div>
         </div>
         {/* SIDE B */}
