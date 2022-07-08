@@ -105,20 +105,20 @@ class CreateNFT extends Nullstack {
     )
   }
 
-  renderImageUpload() {
+  renderImageUpload({ id }) {
     return (
       <div class="flex h-fit items-center justify-center border-2 border-dashed border-white p-2">
         {!this.fileUrl && (
           <div
             class="w-full flex justify-center cursor-pointer"
-            onclick={() => document.getElementById('sideAFile').click()}
+            onclick={() => document.getElementById(id).click()}
           >
             <ImagePlaceholder />
           </div>
         )}
         {this.fileUrl && (
           <img
-            onclick={() => document.getElementById('sideAFile').click()}
+            onclick={() => document.getElementById(id).click()}
             class="cursor-pointer rounded"
             width="150"
             src={this.fileUrl}
@@ -127,7 +127,7 @@ class CreateNFT extends Nullstack {
         <input
           hidden
           type="file"
-          id="sideAFile"
+          id={id}
           name="sideAFile"
           accept="image/*"
           oninput={this.uploadImageToIPFS}
@@ -149,11 +149,11 @@ class CreateNFT extends Nullstack {
               File types supported: JPG, PNG, GIF, SVG, MP4, WEBM, MP3, WAV,
               OGG, GLB, GLTF. Max size: 100 MB
             </p>
-            <ImageUpload />
+            <ImageUpload id="fileSideA" />
           </div>
           <div class="mt-4 flex flex-col gap-4">
             <TextControl bind={this.name} label="Name *" />
-            <TextControl bind={this.name} label="External link" />
+            <TextControl bind={this.name} label="External Link" />
             <div>
               <TextControl bind={this.name} label="Max Editions" />
               <p class="mt-1 text-xs text-gray-300">
