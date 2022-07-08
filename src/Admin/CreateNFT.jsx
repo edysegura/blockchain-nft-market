@@ -110,7 +110,7 @@ class CreateNFT extends Nullstack {
       <div class="flex h-fit items-center justify-center border-2 border-dashed border-white p-2">
         {!this.fileUrl && (
           <div
-            class="cursor-pointer"
+            class="w-full flex justify-center cursor-pointer"
             onclick={() => document.getElementById('sideAFile').click()}
           >
             <ImagePlaceholder />
@@ -129,7 +129,7 @@ class CreateNFT extends Nullstack {
           type="file"
           id="sideAFile"
           name="sideAFile"
-          default
+          accept="image/*"
           oninput={this.uploadImageToIPFS}
         />
       </div>
