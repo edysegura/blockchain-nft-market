@@ -22,6 +22,7 @@ context.start = async function start() {
   context.marketplaceAddress = marketplaceAddress
   context.NFTMarketplace = NFTMarketplace
   context.fetchJson = fetchJson
+  context.walletAddress = window.localStorage.getItem('walletAddress') ?? null
 }
 
 export default context

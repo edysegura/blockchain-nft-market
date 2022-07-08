@@ -27,7 +27,7 @@ class Application extends Nullstack {
     )
   }
 
-  render() {
+  render({ walletAddress }) {
     return (
       <>
         <Head />
@@ -35,7 +35,7 @@ class Application extends Nullstack {
         <WTF route="/wtf" />
         <Explore route="/explore" />
         <TAPs route="/taps" />
-        <Admin route="/admin/*" />
+        {walletAddress && <Admin route="/admin/*" />}
       </>
     )
   }
