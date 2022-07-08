@@ -1,5 +1,6 @@
 import Nullstack from 'nullstack'
 import AccountIcon from '../icons/account'
+import TapIcon from '../icons/tap'
 import NftSlogan from './nftSlogan'
 
 class Header extends Nullstack {
@@ -11,9 +12,23 @@ class Header extends Nullstack {
 
   renderMyAccount() {
     return (
-      <a href="#" class="flex items-center justify-end pt-3">
-        <AccountIcon /> <span class="ml-2"><a href="/admin">My Account</a></span>
-      </a>
+      <div class="flex justify-end gap-4 pt-3">
+        <div class="flex items-center gap-2">
+          <TapIcon />
+          <div>
+            <div class="">
+              <span class="font-extrabold">1.345</span> <span>TAP</span>
+            </div>
+            <span class="text-xs text-gray-300">0x5a773...6f57c0</span>
+          </div>
+        </div>
+        <div class="flex items-center">
+          <AccountIcon />{' '}
+          <span class="ml-2">
+            <a href="/admin">My Account</a>
+          </span>
+        </div>
+      </div>
     )
   }
 
@@ -31,13 +46,24 @@ class Header extends Nullstack {
               >
                 Home
               </a>
-              <a class={`mr-6 ${this.currentRouterStyle({ linkHref: '/wtf' })}`} href="/wtf">
+              <a
+                class={`mr-6 ${this.currentRouterStyle({ linkHref: '/wtf' })}`}
+                href="/wtf"
+              >
                 WTF?
               </a>
-              <a class={`mr-6 ${this.currentRouterStyle({ linkHref: '/explore' })}`} href="/explore">
+              <a
+                class={`mr-6 ${this.currentRouterStyle({
+                  linkHref: '/explore',
+                })}`}
+                href="/explore"
+              >
                 Explore
               </a>
-              <a class={`mr-6 ${this.currentRouterStyle({ linkHref: '/taps' })}`} href="/taps">
+              <a
+                class={`mr-6 ${this.currentRouterStyle({ linkHref: '/taps' })}`}
+                href="/taps"
+              >
                 TAPs
               </a>
             </div>
