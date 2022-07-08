@@ -1,10 +1,11 @@
 import Nullstack from 'nullstack'
-import AccountIcon from '../icons/account'
 import AdminAccountIcon from '../icons/adminAccount'
 import CollectionIcon from '../icons/collection'
 import CubeIcon from '../icons/cube'
 import FaucetIcon from '../icons/faucet'
+import LogoutIcon from '../icons/logout'
 import TraitsIcon from '../icons/traits'
+import WalletIcon from '../icons/wallet'
 import ButtonLink from '../layout/buttonLink'
 import NftSlogan from '../layout/nftSlogan'
 import CreateNFT from './CreateNFT'
@@ -69,9 +70,27 @@ class Admin extends Nullstack {
     )
   }
 
+  renderLogout() {
+    return (
+      <div class="absolute right-10 top-5 flex gap-5">
+        <div class="flex items-center gap-1">
+          <WalletIcon width={16} color="#FFC701" />
+          <span>0x632b...4u9e</span>
+        </div>
+        <div class="flex items-center gap-1">
+          <LogoutIcon />{' '}
+          <span>
+            <a href="/">logout</a>
+          </span>
+        </div>
+      </div>
+    )
+  }
+
   render() {
     return (
-      <main class="flex min-h-screen w-full max-w-[1680px] 2xl:mx-auto bg-gray-900">
+      <main class="relative flex min-h-screen w-full max-w-[1680px] bg-gray-900 2xl:mx-auto">
+        <Logout />
         <Nav />
         <section class="w-4/5">
           <Faucet route="/admin" />
