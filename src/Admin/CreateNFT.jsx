@@ -2,6 +2,7 @@ import Nullstack from 'nullstack'
 import ImagePlaceholder from '../layout/imagePlaceholder'
 import Label from '../layout/label'
 import SimpleTitle from '../layout/simpleTitle'
+import TextareaControl from '../layout/textareaControl'
 import TextControl from '../layout/textControl'
 
 class CreateNFT extends Nullstack {
@@ -110,7 +111,7 @@ class CreateNFT extends Nullstack {
       <div class="flex h-fit items-center justify-center border-2 border-dashed border-white p-2">
         {!this.fileUrl && (
           <div
-            class="w-full flex justify-center cursor-pointer"
+            class="flex w-full cursor-pointer justify-center"
             onclick={() => document.getElementById(id).click()}
           >
             <ImagePlaceholder />
@@ -135,6 +136,7 @@ class CreateNFT extends Nullstack {
       </div>
     )
   }
+
   render() {
     return (
       <section class="flex gap-24 pl-10 pt-14">
@@ -159,6 +161,13 @@ class CreateNFT extends Nullstack {
               <p class="mt-1 text-xs text-gray-300">
                 Number of Editions that will be created
               </p>
+            </div>
+            <div>
+              <TextareaControl
+                bind={this.description}
+                label="Description"
+                hint="The description will be included on the item's detail page underneath its image. Markdown syntax is supported."
+              />
             </div>
             <TextControl bind={this.price} label="Price *" />
           </div>
