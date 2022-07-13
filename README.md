@@ -30,6 +30,7 @@ Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
 ## References
 
+- [Figma Mockup](https://www.figma.com/file/M2ITl1JtcGVV3VtsU3xUHO/Starving-Marketplace?node-id=2%3A3)
 - [How to Build a Full Stack NFT Marketplace on Ethereum with Polygon and Next.js](https://dev.to/edge-and-node/building-scalable-full-stack-apps-on-ethereum-with-polygon-2cfb)
 
 ## Tools
